@@ -6,7 +6,12 @@ class StartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text('Start Screen'),
+      child: Text(
+        'Learn Flutter the fun way!',
+        style: TextStyle(
+          color: Colors.white,
+        ),
+      ),
     );
   }
 }
