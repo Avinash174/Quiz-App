@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:quiz_app/question_screen.dart';
 import 'package:quiz_app/quiz.dart';
 
 class StartScreen extends StatelessWidget {
