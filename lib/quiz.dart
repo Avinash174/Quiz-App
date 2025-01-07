@@ -40,7 +40,11 @@ class _QuizState extends State<Quiz> {
               end: Alignment.bottomRight,
             ),
           ),
-          child: activeScreen,
+          child: activeScreen == 'start-screen'
+              ? StartScreen(
+                  switchScreen,
+                )
+              : const QuestionScreen(), //using turnary operator
         ),
       ),
     );
