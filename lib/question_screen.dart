@@ -12,21 +12,21 @@ class _QuestionScreenState extends State<QuestionScreen> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('The Questions'),
-        SizedBox(
+        const Text('The Questions'),
+        const SizedBox(
           height: 30,
         ),
         ElevatedButton(
           onPressed: () {},
-          child: Text('Answer 1'),
+          child: const Text('Answer 1'),
         ),
         ElevatedButton(
           onPressed: () {},
-          child: Text('Answer 2'),
+          child: const Text('Answer 2'),
         ),
         ElevatedButton(
           onPressed: () {},
-          child: Text('Answer 3'),
+          child: const Text('Answer 3'),
         ),
       ],
     );
