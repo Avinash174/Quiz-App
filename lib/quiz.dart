@@ -11,6 +11,7 @@ class Quiz extends StatefulWidget {
 
 class _QuizState extends State<Quiz> {
   var activeScreen;
+
   void switchScreen() {
     setState(() {
       activeScreen = 'question-screen';
@@ -20,7 +21,8 @@ class _QuizState extends State<Quiz> {
   @override
   void initState() {
     super.initState();
-    activeScreen = 'question-screen';
+    // Start with the StartScreen
+    activeScreen = 'start-screen';
   }
 
   @override

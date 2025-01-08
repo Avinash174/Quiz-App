@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:quiz_app/quiz.dart';
 
 class StartScreen extends StatelessWidget {
   final VoidCallback switchScreen;
@@ -13,6 +11,7 @@ class StartScreen extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          // Logo with reduced opacity
           Opacity(
             opacity: 0.6,
             child: Image.asset(
@@ -20,42 +19,35 @@ class StartScreen extends StatelessWidget {
               width: 300,
             ),
           ),
-          const SizedBox(
-            height: 80,
-          ),
+          const SizedBox(height: 80),
+
+          // Main title
           const Text(
-            'Learn Flutter Fun Way! ',
+            'Learn Flutter Fun Way!',
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 24,
+              fontWeight: FontWeight.bold,
               color: Colors.white,
             ),
           ),
-          const SizedBox(
-            height: 10,
-          ),
-          const Text(
-            'Welcome to the Quiz App',
-            style: TextStyle(
-              fontSize: 18,
-              color: Colors.white,
-            ),
-          ),
+
           const SizedBox(height: 20),
+
           OutlinedButton.icon(
             onPressed: switchScreen,
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
             ),
-            icon: const Icon(
-              Icons.arrow_right_alt,
-            ),
+            icon: const Icon(Icons.arrow_right_alt),
             label: const Text(
               'Start Quiz',
               style: TextStyle(
-                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
               ),
             ),
-          )
+          ),
         ],
       ),
     );

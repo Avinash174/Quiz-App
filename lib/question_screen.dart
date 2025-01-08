@@ -10,6 +10,14 @@ class QuestionScreen extends StatefulWidget {
 class _QuestionScreenState extends State<QuestionScreen> {
   @override
   Widget build(BuildContext context) {
-    return Text('Question Screen');
+    return Column(
+      children: [
+        Text('data'),
+        SizedBox(
+          height: 30,
+        ),
+        
+      ],
+    );
   }
 }
