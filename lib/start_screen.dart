@@ -30,7 +30,7 @@ class StartScreen extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           const Text(
