@@ -18,7 +18,11 @@ const questions = [
     ['Widgets', 'Componets', 'Blocks', 'Functions'],
   ),
   QuizQuestion(
-    'What are the main building blocks of the flutter UI?',
-    ['Widgets', 'Componets', 'Blocks', 'Functions'],
+    'What company makes the Xperia model of smartphone?',
+    [
+      'Samsung',
+      'Sony',
+      'Nokia',
+    ],
   )
 ];
