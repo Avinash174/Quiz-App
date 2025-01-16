@@ -19,6 +19,10 @@ class _QuizState extends State<Quiz> {
     });
   }
 
+  void chooseAnswer(String answer) {
+    selectedAnswer.add(answer);
+  }
+
   @override
   void initState() {
     super.initState();
@@ -30,7 +34,9 @@ class _QuizState extends State<Quiz> {
   Widget build(BuildContext context) {
     Widget screenWidget = StartScreen(switchScreen);
     if (activeScreen == 'question-screen') {
-      screenWidget = const QuestionScreen();
+      screenWidget = QuestionScreen(
+        onSelectAnswer: chooseAnswer,
+      );
     }
     return MaterialApp(
       debugShowCheckedModeBanner: false,
