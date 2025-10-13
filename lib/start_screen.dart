@@ -12,7 +12,6 @@ class StartScreen extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // Logo with reduced opacity
           Opacity(
             opacity: 0.6,
             child: Image.asset(
@@ -27,40 +26,24 @@ class StartScreen extends StatelessWidget {
             style: GoogleFonts.lato(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: const Color.fromARGB(
-                255,
-                201,
-                153,
-                251,
-              ),
+              color: const Color.fromARGB(255, 201, 153, 251),
             ),
           ),
-
           const SizedBox(height: 20),
-
           OutlinedButton.icon(
             onPressed: switchScreen,
             style: OutlinedButton.styleFrom(
-              foregroundColor: const Color.fromARGB(
-                255,
-                201,
-                153,
-                251,
+              foregroundColor: const Color.fromARGB(255, 201, 153, 251),
+              side: const BorderSide(
+                color: Color.fromARGB(255, 201, 153, 251),
               ),
             ),
-            icon: const Icon(
-              Icons.arrow_right_alt,
-            ),
+            icon: const Icon(Icons.arrow_right_alt),
             label: Text(
               'Start Quiz',
               style: GoogleFonts.lato(
                 fontSize: 18,
-                color: const Color.fromARGB(
-                  255,
-                  201,
-                  153,
-                  251,
-                ),
+                color: const Color.fromARGB(255, 201, 153, 251),
                 fontWeight: FontWeight.w500,
               ),
             ),

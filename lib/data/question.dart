@@ -1,28 +1,42 @@
-import 'package:quiz_app/models/quiz_question.dart';
+class QuizQuestion {
+  final String text;
+  final List<String> answers;
+
+  const QuizQuestion(this.text, this.answers);
+
+  List<String> getShuffledAnswer() {
+    final shuffledList = List.of(answers);
+    shuffledList.shuffle();
+    return shuffledList;
+  }
+}
 
 const questions = [
   QuizQuestion(
-    'What are the main building blocks of the flutter UI?',
-    ['Widgets', 'Componets', 'Blocks', 'Functions'],
-  ),
-  QuizQuestion(
-    'What are the main building blocks of the flutter UI?',
-    ['Widgets', 'Componets', 'Blocks', 'Functions'],
-  ),
-  QuizQuestion(
-    'What are the main building blocks of the flutter UI?',
-    ['Widgets', 'Componets', 'Blocks', 'Functions'],
-  ),
-  QuizQuestion(
-    'What are the main building blocks of the flutter UI?',
-    ['Widgets', 'Componets', 'Blocks', 'Functions'],
-  ),
-  QuizQuestion(
-    'What company makes the Xperia model of smartphone?',
+    'What is Flutter?',
     [
-      'Samsung',
-      'Sony',
-      'Nokia',
+      'A UI toolkit for building apps',
+      'A database system',
+      'A programming language',
+      'An operating system',
     ],
-  )
+  ),
+  QuizQuestion(
+    'Who developed Flutter?',
+    [
+      'Google',
+      'Facebook',
+      'Microsoft',
+      'Apple',
+    ],
+  ),
+  QuizQuestion(
+    'Which language is used to write Flutter apps?',
+    [
+      'Dart',
+      'Kotlin',
+      'Java',
+      'Swift',
+    ],
+  ),
 ];

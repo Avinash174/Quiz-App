@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/answer_button.dart';
 import 'package:quiz_app/data/question.dart';
@@ -15,8 +14,8 @@ class QuestionScreen extends StatefulWidget {
 class _QuestionScreenState extends State<QuestionScreen> {
   var currentQuestionIndex = 0;
 
-  void answerQuestion(String selectdAnswer) {
-    widget.onSelectAnswer('...');
+  void answerQuestion(String selectedAnswer) {
+    widget.onSelectAnswer(selectedAnswer);
     setState(() {
       currentQuestionIndex++;
     });
@@ -24,7 +23,16 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // Ensure the current index does not exceed the number of questions
+    // Prevent going out of range
+    if (currentQuestionIndex >= questions.length) {
+      return const Center(
+        child: Text(
+          'Quiz Finished!',
+          style: TextStyle(color: Colors.white, fontSize: 22),
+        ),
+      );
+    }
+
     final currentQuestion = questions[currentQuestionIndex];
 
     return SizedBox(
@@ -36,30 +44,21 @@ class _QuestionScreenState extends State<QuestionScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              currentQuestion.text, // Use the current question's text
+              currentQuestion.text,
               style: GoogleFonts.lato(
-                color: const Color.fromARGB(
-                  255,
-                  201,
-                  153,
-                  251,
-                ),
+                color: const Color.fromARGB(255, 201, 153, 251),
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(
-              height: 30,
-            ),
+            const SizedBox(height: 30),
             ...currentQuestion.getShuffledAnswer().map((answer) {
               return AnswerButton(
                 answeText: answer,
-                onTap: () {
-                  answerQuestion(answer);
-                },
+                onTap: () => answerQuestion(answer),
               );
-            })
+            }),
           ],
         ),
       ),
